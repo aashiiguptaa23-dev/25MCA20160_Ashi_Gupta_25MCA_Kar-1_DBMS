@@ -24,3 +24,8 @@ JOIN Employees e2
 ON e1.manager_id = e2.manager_id
 AND e1.emp_id < e2.emp_id
 WHERE e1.manager_id IS NOT NULL;
+
+
+SELECT MAX(Salary) AS Second_Highest_Salary
+FROM Employees
+WHERE Salary < (SELECT MAX(Salary) FROM Employees);
